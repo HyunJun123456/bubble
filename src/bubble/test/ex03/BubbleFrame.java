@@ -39,11 +39,15 @@ public class BubbleFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // x버튼으로 창을 끌 때 JVM 같이 종료하기
 	}
 
+	// 1. 그림 변경 시점: 이벤트 루프에 모든 임무(task)가 완료되어야 repaint가 된다.
+	// 2. 메인스레드만 있으면 key 전달 -> 이벤트 루프에!! r r r or u u u
+	
+	
 	private void initListner() {
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				System.out.println(e.getKeyCode());
+				//System.out.println(e.getKeyCode());
 
 				switch (e.getKeyCode()) {
 				case KeyEvent.VK_LEFT:
